@@ -1,7 +1,7 @@
 name: Deployment Exercise 1
 on: push
 jobs:
-  CI-steps:
+  CIsteps:
       runs-on: Ubuntu-lastest
       steps:
         - name: Check out Git repository
