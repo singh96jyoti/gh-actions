@@ -1,19 +1,19 @@
-name: lint, test, deploy
+name: Deployment Exercise 1
 on: push
 jobs:
-    CI-steps:
-        name: Run lint, test, deploy
-        runs-on: Ubuntu-lastest
-        steps:
-            - name: Check out Git repository
-              uses: actions/checkout@v3
-            - name: Set up Node.js
-              uses: actions/setup-node@v4
-              with:
-                node-version: 18
-            - name: Install Node.js dependencies
-              uses: npm ci
-            - name: Test
-              run: npm test
-            - name: Deploy
-              run: npm run build
+  CI-steps:
+      name: Run lint, test, deploy
+      runs-on: Ubuntu-lastest
+      steps:
+        - name: Check out Git repository
+          uses: actions/checkout@v3
+        - name: Set up Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: 18
+        - name: Install Node.js dependencies
+          uses: npm ci
+        - name: Test
+          run: npm test
+        - name: Deploy
+          run: npm run build
