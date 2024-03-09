@@ -1,4 +1,4 @@
-name: lint and deploy
+name: lint, test, deploy
 on: push
 jobs:
     CI-steps:
