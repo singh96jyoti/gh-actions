@@ -1,0 +1,24 @@
+name: lint, test, deploy
+on: push
+jobs:
+    CI-steps:
+        name: Run lint, test, deploy
+        runs-on: Ubuntu:lastest
+        steps:
+            - name: Check out Git repository
+              uses: actions/checkout@v3
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: 18
+            - name: Install Node.js dependencies
+              uses: npm ci
+            - name: Run the linters
+              uses: wearerequired/lint-action@v2
+              with: 
+                eslint: true
+                prettier: true
+            - name: Test
+              run: npm test
+            - name: Deploy
+              run: npm run build
