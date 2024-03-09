@@ -3,7 +3,7 @@ on: push
 jobs:
     CI-steps:
         name: Run lint, test, deploy
-        runs-on: Ubuntu:lastest
+        runs-on: Ubuntu-lastest
         steps:
             - name: Check out Git repository
               uses: actions/checkout@v3
