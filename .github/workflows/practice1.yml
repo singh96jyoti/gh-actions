@@ -2,15 +2,15 @@ name: Deployment Exercise 1
 on: push
 jobs:
   CIsteps:
-      runs-on: Ubuntu-lastest
-      steps:
-        - name: Get code
-          uses: actions/checkout@v3
-        - name: Install dependencies
-          uses: npm ci
-        - name: Lint
-          run: npm run lint          
-        - name: Test
-          run: npm run test
-        - name: Deploy
-          run: npm run build
+    runs-on: Ubuntu-lastest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        uses: npm ci
+      - name: Lint
+        run: npm run lint          
+      - name: Test
+        run: npm run test
+      - name: Build code
+        run: npm run build
